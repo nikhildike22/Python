@@ -3,6 +3,9 @@ import requests
 def api_handling():
     url = "https://api.freeapi.app/api/v1/public/randomusers/user/random"
     response = requests.get(url)
+
+    print("Status Code:", response.status_code)
+    # print("Response:", response.text)
     data = response.json()
 
     if data["success"] and "data" in data:
